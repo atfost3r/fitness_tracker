@@ -1,0 +1,23 @@
+{
+    "name": "Alex",
+    "birthday": "10/09/1991",
+    "goal": "cut",
+    "macros": {
+        "protein": 262,
+        "carbs": 200,
+        "fat": 102
+    },
+    "bulk": {
+        "min": 0.5,
+        "max": 1
+    },
+    "cut": {
+        "min": -1,
+        "max": -2
+    },
+    "maxes": {
+        "bench": 315,
+        "squat": 405,
+        "deadlift": 505
+    }
+}
