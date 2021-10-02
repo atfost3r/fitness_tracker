@@ -62,3 +62,30 @@ if dayOfTheWeek == 5:  # Update some stuff on Saturdays
     # Check Macro adherence
     df_progress = progress.progressWeekly(dayOfTheWeek)
     [updated_macros] = dietCalc.macroCheck(df_progress, goal_tolerances, goal)
+
+# TODO create JSON form for updating
+x = {
+    "name": "Alex",
+    "birthday": "10/09/1991",
+    "goal": "cut",
+    "macros": {
+        "calories": 2753,
+        "protein": 262,
+        "carbs": 200,
+        "fat": 102
+    },
+    "bulk": {
+        "min": 0.5,
+        "max": 1
+    },
+    "cut": {
+        "min": -1,
+        "max": -2
+    },
+    "maxes": {
+        "bench": 315,
+        "squat": 405,
+        "deadlift": 505
+    },
+    "weight": weight
+}
