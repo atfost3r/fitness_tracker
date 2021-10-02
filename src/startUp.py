@@ -26,7 +26,7 @@ elif ans == "n":
             weight
         )
 
-print("Your macros to start are:")
+print("Your macros to start are:\n")
 print(
     "Calories: {:.0f} \t Protein: {:.0f}\t Carbs: {:.0f}\t Fat: {:.0f}".format(
         calories_goal, protein_goal, carbs_goal, fat_goal
