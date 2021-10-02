@@ -24,11 +24,15 @@ class Application(tk.Frame):
     def say_hi(self):
         print("hi there, everyone!")
 
+
+# TODO: First time use page
+class StartPage(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
 root = tk.Tk()
 app = Application(master=root)
 app.mainloop()
-
-# TODO: First time use page
 
 # TODO: Welcome page
 
