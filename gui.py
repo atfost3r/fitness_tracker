@@ -25,7 +25,7 @@ class Application(tk.Frame):
         print("hi there, everyone!")
 
 
-# TODO: First time use page
+# TODO First time use page
 class StartPage(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
@@ -34,7 +34,7 @@ root = tk.Tk()
 app = Application(master=root)
 app.mainloop()
 
-# TODO: Welcome page
+# TODO Welcome page
 
-# TODO: Update page
+# TODO Update page
 
