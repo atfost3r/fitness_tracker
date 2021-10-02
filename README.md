@@ -7,9 +7,7 @@ This is my attempt at an all-in-one fitness tracker and calculator for diet and 
 The first time that you start, run the program. This will prompt you to enter your weight. Then, your initial preference:
 
 - Cut
-or
 - Bulk
-or
 - Maintanance
 From there, you'll be given the starting out goal macros and calories. This is calculated using formaulas from the Bigger, Leaner Stronger book.
 
