@@ -3,6 +3,7 @@
 # dietCalc.py - this subroutine will take current body stats and and calculate the calories, protein, carbs and fat that should be the goal
 
 import adjustmentCalc
+import pandas as pd
 
 
 def harris_benedict(weight, height, age):
@@ -84,9 +85,14 @@ def carbCycling(weight, height, age):
     )
 
 
-def macroCheck(df_progress, goal_tolerances, goal):
+def macroCheck(df_progress, goal_tolerances, goal,bmr, weight):
     cal_delta = df_progress["calories_weekly_delta"].iloc[-1]
     weight_delta = df_progress["weight_weekly"].iloc[-1]
+
+    df_cals = pd.read_csv("src/databases/dailyProgressStats.csv", encoding="utf-8")
+    calories = df_cals["calories_goal"].iloc[-1]
+    carbs = df_cals["carbs_goal"].iloc[-1]
+
 
     # TODO check if you're moving in the right direction
     if goal == "cut" and weight_delta < goal_tolerances.get("Min"):
@@ -94,6 +100,7 @@ def macroCheck(df_progress, goal_tolerances, goal):
             print(
                 "You'll need to get your calories in line.\nWe'll keep them the same this week."
             )
+            calories = calories #same calories
         else:
-            calories, carbs = adjustmentCalc.cutAdjustment()
+            calories, carbs = adjustmentCalc.cutAdjustment(calories, bmr, weight)
     return calories, carbs  # protein, fat, carbs

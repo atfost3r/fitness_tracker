@@ -18,7 +18,7 @@ def dailyUpdate(date):  # Create function to do the daily update of data
     carbs_goal = 172
     fat_goal = 107
     calories_burnt = float(input("Calories Burnt: "))
-    calories_deficit = calories_actual - calories_burnt
+    calories_delta = calories_actual - calories_burnt
     dailyFields = (
         date,
         weight,
@@ -31,16 +31,16 @@ def dailyUpdate(date):  # Create function to do the daily update of data
         carbs_goal,
         fat_goal,
         calories_burnt,
-        calories_deficit,
+        calories_delta,
     )
     # write out
-    with open("databases/dailyBodyStats.csv", "a") as f:
+    with open("src/databases/dailyBodyStats.csv", "a") as f:
         writer = csv.writer(f)
         writer.writerow(dailyFields)
     return weight
 
 
-def weeklyUpdate():
+def weeklyUpdate(date):
 
     print("Time to Update your body measurements.\nGrab a tape measure!")
     bicep_r = float(input("Right Bicep (in): "))
@@ -59,8 +59,8 @@ def weeklyUpdate():
         waist, neck
     )  # calculate body fat percentage with U.S. Navy's formula
     glutes = float(input("Glutes (in): "))
-    weeklyFields = (bicep_r,bicep_l,forearm_r,forearm_l,calf_r,calf_l,thigh_r,thigh_l, neck, shoulders,chest, waist, navy_bodyfat, waist, glutes)
-    with open("databases/weeklyBodyStats.csv", "a") as f:
+    weeklyFields = (date, bicep_r,bicep_l,forearm_r,forearm_l,calf_r,calf_l,thigh_r,thigh_l, neck, shoulders,chest, waist, navy_bodyfat, glutes)
+    with open("src/databases/weeklyBodyStats.csv", "a") as f:
        writer = csv.writer(f)
        writer.writerow(weeklyFields)
     return (
