@@ -5,8 +5,10 @@
 from datetime import date
 import pandas as pd
 from pandas.core.indexes.base import ensure_index
-import bodyCalc, automation, progress, dietCalc
-
+import bodyCalc
+import automation
+import progress
+import dietCalc
 
 # Get the current date
 
@@ -30,7 +32,7 @@ goal_tolerances = {"Min": 0.0, "Goal": -1.0, "Max": -2.0}
 
 # automatic update logic
 
-## Run daily updates
+# Run daily updates
 weight = automation.dailyUpdate(dt_string)
 # Calulate progress
 progress.progressDaily()
@@ -51,23 +53,25 @@ if dayOfTheWeek == 5:  # Update some stuff on Saturdays
         waist,
         navy_bodyfat,
         glutes
-    ) = automation.weeklyUpdate(dayOfTheWeek)
+    ) = automation.weeklyUpdate(dt_string)
     leanWeight, fatWeight = bodyCalc.bodyComp(weight, navy_bodyfat)
     print("Your body fat percentage is: {:2.2f}% ".format(navy_bodyfat * 100))
     print(
         "You you have {:3.2f}  pounds of fat and {:3.2f} pounds of lean mucsle".format(
-            leanWeight, fatWeight
+            fatWeight, leanWeight
         )
     )
+    bmr = dietCalc.harris_benedict(weight, height=75, age=29)
     # Check Macro adherence
-    df_progress = progress.progressWeekly(dayOfTheWeek)
-    [updated_macros] = dietCalc.macroCheck(df_progress, goal_tolerances, goal)
+    df_progress = progress.progressWeekly()
+    caloires_new, carbs_new = dietCalc.macroCheck(
+        df_progress, goal_tolerances, goal, bmr, weight)
 
 # TODO create JSON form for updating
 x = {
     "name": "Alex",
-    "birthday": "10/09/1991",
-    "goal": "cut",
+    "birthday": birthday,
+    "goal": goal,
     "macros": {
         "calories": 2753,
         "protein": 262,
