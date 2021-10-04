@@ -15,7 +15,7 @@ def cutAdjustment(calories, bmr, weight):
     return calories, carbs
 
 
-def bulkAdjustment(calories):
+def bulkAdjustment(calories, weight):
     calories = calories + 100
     carbs = (calories - ((1 * weight) / 4 + (0.4 * weight) / 9)) / 4
     return calories, carbs

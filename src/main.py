@@ -74,9 +74,9 @@ x = {
     "goal": goal,
     "macros": {
         "calories": 2753,
-        "protein": 262,
-        "carbs": 200,
-        "fat": 102
+        "protein": 275,
+        "carbs": 172,
+        "fat": 107
     },
     "bulk": {
         "min": 0.5,

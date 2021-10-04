@@ -58,11 +58,3 @@ print(
 print("\n\n\nGood Luck!\n\n\n")
 
 
-def idealBodyCalc(wrist, waist, knee):
-    # This is based on the 'Grecian' ideal from Beyond Bigger Leaner Stronger by Michael Matthews, pg40
-    ideal_arm = wrist * 2.5
-    ideal_calf = ideal_arm
-    ideal_shoulder = waist * 1.618 
-    ideal_chest = 6.5 * wrist
-    ideal_thigh = 1.75 * knee
-    return ideal_arm, ideal_calf, ideal_shoulder, ideal_chest, ideal_thigh
