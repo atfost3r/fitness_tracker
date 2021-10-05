@@ -12,7 +12,7 @@ import pandas as pd
 def progressDaily():
     # read in the csv containing all my body data
     df_dailyBodyStats = pd.read_csv(
-        "src/databases/dailyProgressStats.csv", encoding="utf-8")
+        "src/databases/dailyBodyStats.csv", encoding="utf-8")
     df_dailyBodyStats["weight_delta"] = round(
         df_dailyBodyStats["weight"].diff(), 2)
     df_dailyBodyStats["calories_delta"] = (
@@ -30,7 +30,7 @@ def progressDaily():
     )
     # Save daily progress stats
     df_dailyBodyStats.to_csv(
-        "src/databases/dailyProgressStats.csv", encoding="utf-8"
+        "src/databases/dailyProgressStats.csv", encoding="utf-8", mode='a', header=False
     )
     return
 
