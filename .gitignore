@@ -130,3 +130,6 @@ dmypy.json
 
 # Github Files
 .github
+
+# VS Code stuff 
+*.code-workspace

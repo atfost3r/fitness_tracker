@@ -9,6 +9,7 @@ The first time that you start, run the program. This will prompt you to enter yo
 - Cut
 - Bulk
 - Maintanance
+
 From there, you'll be given the starting out goal macros and calories. This is calculated using formaulas from the Bigger, Leaner Stronger book.
 
 After you have written down these goals, you'll be asked if you want to enter your body measurements. You can either do this or wait.
@@ -16,3 +17,8 @@ After you have written down these goals, you'll be asked if you want to enter yo
 ## Bulk
 
 This is the thing to do if you want to add muscle.
+
+## Future Work
+- [] GUI for easy access
+- [] Lift and Exercise Journal
+- [] AI!! *because it's all the rage
