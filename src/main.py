@@ -38,7 +38,7 @@ weight = automation.dailyUpdate(dt_string)
 progress.progressDaily()
 
 # Weekly update
-if dayOfTheWeek == 5:  # Update some stuff on Saturdays
+if dayOfTheWeek == 5:  # Update some additioanl stuff on Saturdays
     (
         bicep_l,
         bicep_r,
