@@ -75,3 +75,20 @@ def progressWeekly():
         encoding="utf-8",
     )
     return df_weeklyBodyStats
+
+def bodyFat_weightLoss(bodyfat):
+    #This funtion is for using the r/leangains table for weight loss rate to minimize muscle loss while  cutting.
+    #Body fat assumed to be input into this as a decimal but if that is not the case...
+    if bodyfat > 1:
+        bodyfat = bodyfat / 100
+    if bodyfat >.2:
+        loss_rate = 1.7 #pounds/week
+    elif bodyfat >.15 and bodyfat < .17:
+        loss_rate = 1.5
+    elif bodyfat >.12 and bodyfat < .14:
+        loss_rate =1.3
+    elif bodyfat >.09 and bodyfat < .11:
+        loss_rate = 1.0
+    elif bodyfat < .08:
+        loss_rate = .7
+    return loss_rate

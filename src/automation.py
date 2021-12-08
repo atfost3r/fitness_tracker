@@ -34,7 +34,7 @@ def dailyUpdate(date):  # Create function to do the daily update of data
         calories_delta,
     )
     # write out
-    with open("src/databases/dailyBodyStats.csv", "a") as f:
+    with open("databases/dailyBodyStats.csv", "a") as f:
         writer = csv.writer(f)
         writer.writerow(dailyFields)
     return weight
